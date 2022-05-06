@@ -1,13 +1,15 @@
 //require('dotenv').config();
 module.exports = {
-    // HOST: "us-cdbr-east-05.cleardb.net",
-    // USER: "bdd03126dc52c5",
-    // PASSWORD: "1cf61bf4",
-    // DB: "heroku_0f77bbfdae93200"
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "root",
-    DB: "cooking2go"
+    HOST: "us-cdbr-east-05.cleardb.net",
+    USER: "b828d14c331493",
+    PASSWORD: "34abc1a2",
+    DB: "heroku_7962a59f07399dd"
+    // HOST: "localhost",
+    // USER: "root",
+    // PASSWORD: "root",
+    // DB: "cooking2go"
     
-    //CLEARDB_DATABASE_URL: process.env.CLEARDB_DATABASE_URL,
+   
   };
+
+  // mysql://b828d14c331493:34abc1a2@us-cdbr-east-05.cleardb.net/heroku_7962a59f07399dd?
