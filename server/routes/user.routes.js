@@ -52,5 +52,5 @@ module.exports = app => {
     // router.delete("/:id", users.delete);
     // // Delete all users
     // router.delete("/", users.deleteAll);
-    app.use('/api', router);
+    app.use('https://main--cooking-2-go.netlify.app/api', router);
   };
