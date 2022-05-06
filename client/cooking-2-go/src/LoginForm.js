@@ -45,7 +45,7 @@ function LoginForm({ Login, error, CreateUser }) {
 
         // });
         
-        Axios.post("http://localhost:8080/api/users", {
+        Axios.post("https://cooking-2-go-1.herokuapp.com/api/users", {
             username: usernameReg,
             password: passwordReg,
             premium: premiumReg,
@@ -78,7 +78,7 @@ function LoginForm({ Login, error, CreateUser }) {
         //     console.log(response);
         // });
         
-        Axios.post("http://localhost:8080/api/login", {
+        Axios.post("https://cooking-2-go-1.herokuapp.com/api/login", {
             username: username, 
             password: password,
         }).then((response) => {
@@ -95,7 +95,7 @@ function LoginForm({ Login, error, CreateUser }) {
         <form onSubmit={submitHandler}>
             <div className="form-inner">
                 <h2>Create an Account</h2>
-                {(error != "") ? ( <div className="error">{error}</div> ) : ""}
+                {(error !== "") ? ( <div className="error">{error}</div> ) : ""}
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input type="email" email="email" id="email" onChange={(e) => setUsernameReg(e.target.value)} />
@@ -107,7 +107,7 @@ function LoginForm({ Login, error, CreateUser }) {
                 <input type="checkbox" value="premium" onChange={(e) => setPremium(true)}/>
                 <input type="button" onClick={createAccount} value="CREATE ACCOUNT" />
                <h2> Login </h2> 
-               {(error != "") ? ( <div className="error">{error}</div> ) : ""}
+               {(error !== "") ? ( <div className="error">{error}</div> ) : ""}
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input type="email" email="email" id="email" onChange={(e) => setUsername(e.target.value)} />

@@ -6,7 +6,9 @@ const Recipe = ({recipeID, publisher, title, image, url}) =>{
     const storeRecipe = function(){
         //TODO store recipe in database
         const request = ""; // Need to get actual url
-        const response = fetch(request, {method: 'POST', headers: {'Content-Type': 'application/json',}, body:JSON.stringify(instanceData)})
+        fetch(request, {method: 'POST', headers: {'Content-Type': 'application/json',}, body:JSON.stringify(instanceData)}).then((response) => {
+            console.log(response);
+        })
     }
     
     return(

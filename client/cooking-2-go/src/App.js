@@ -16,7 +16,7 @@ const App = () => {
   const Login = details => {
     console.log(details);
     // TODO some fetch call to heroku
-    if (details.email == basicUser.email && details.password == basicUser.password) {
+    if (details.email === basicUser.email && details.password === basicUser.password) {
       console.log("Logged in");
       setUser({
         email: details.email
@@ -29,7 +29,7 @@ const App = () => {
   const createUser = details => {
     console.log(details);
 
-    if (details.email != "" && details.password != "") {
+    if (details.email !== "" && details.password !== "") {
       console.log("created");
       //TODO  some fetch call to heroku
     } else {
