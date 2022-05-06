@@ -45,7 +45,7 @@ function LoginForm({ Login, error, CreateUser }) {
 
         // });
         
-        Axios.post("https://cooking-2-go-1.herokuapp.com/api/users", {
+        Axios.post("http://localhost:8080/api/users", {
             username: usernameReg,
             password: passwordReg,
             premium: premiumReg,
@@ -78,7 +78,7 @@ function LoginForm({ Login, error, CreateUser }) {
         //     console.log(response);
         // });
         
-        Axios.post("https://cooking-2-go-1.herokuapp.com/api/login", {
+        Axios.post("http://localhost:8080/api/login", {
             username: username, 
             password: password,
         }).then((response) => {

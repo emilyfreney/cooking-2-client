@@ -39,6 +39,21 @@ module.exports = app => {
       });
     });
 
+    // router.post("/users", (req, res) => {
+    //   sql.query("SELECT * FROM recipe WHERE user = ?", [username], (err, result) => {
+    //     if (err) {
+    //         console.log("error: ", err);
+    //       res.send({err: err});  
+    //     }
+    //       if (result.length > 0) {
+    //         res.send(result);
+    //       } else {
+    //         res.send({ message: ""});
+    //       }
+
+    //   });
+    // });
+
 
     // Retrieve all users
     // router.get("/", users.findAll);
@@ -52,5 +67,5 @@ module.exports = app => {
     // router.delete("/:id", users.delete);
     // // Delete all users
     // router.delete("/", users.deleteAll);
-    app.use('https://main--cooking-2-go.netlify.app/api', router);
+    app.use('/api', router);
   };
