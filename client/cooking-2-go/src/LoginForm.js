@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Axios from 'axios'
+import {Recipe} from "./Recipe";
 //import Axios from 'axios';
 function LoginForm({ Login, error, CreateUser }) {
 
@@ -58,25 +60,25 @@ function LoginForm({ Login, error, CreateUser }) {
     };
 
     const logInAccount = () => {
-        // THIS THROWS ERROR FOR SOME REASON?
-        // fetch('http://http://localhost:8080/api/login', {
+        //THIS THROWS ERROR FOR SOME REASON?
+        fetch('http://http://localhost:8080/api/login', {
      
-        //     // Adding method type
-        //     method: "POST",
+            // Adding method type
+            method: "POST",
              
-        //     // Adding body or contents to send
-        //     body: JSON.stringify({
-        //         username: username,
-        //         password: password,
-        //     }),
+            // Adding body or contents to send
+            body: JSON.stringify({
+                username: username,
+                password: password,
+            }),
              
-        //     // Adding headers to the request
-        //     headers: {
-        //         "Content-type": "application/json; charset=UTF-8"
-        //     }
-        // }).then((response)=>{
-        //     console.log(response);
-        // });
+            // Adding headers to the request
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then((response)=>{
+            console.log(response);
+        });
         
         Axios.post("http://localhost:8080/api/login", {
             username: username, 
@@ -92,6 +94,7 @@ function LoginForm({ Login, error, CreateUser }) {
     };
 
     return (
+        <Router>
         <form onSubmit={submitHandler}>
             <div className="form-inner">
                 <h2>Create an Account</h2>
@@ -110,18 +113,28 @@ function LoginForm({ Login, error, CreateUser }) {
                {(error !== "") ? ( <div className="error">{error}</div> ) : ""}
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
-                    <input type="email" email="email" id="email" onChange={(e) => setUsername(e.target.value)} />
+                    <input type="email" email="email" id="email1" onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password:</label>
                     <input type="password" email="password" id="password1" onChange={(e) => setPassword(e.target.value)}/>
                 </div>
+                <Link to="/Recipe">
                 <input type="submit" onClick={logInAccount} value="LOGIN" />
-
+                </Link>
             </div>
             <h1>{loginStatus}</h1>
         </form>
+                <Switch>
+                        <Route exact path="/Recipe" component={Recipe} />
+                       
+                </Switch>
+        </Router>
     )
 }
 
 export default LoginForm;
+
+<Link to="/posts">
+<div className="add-post">Add Post</div>
+</Link>
