@@ -134,7 +134,3 @@ function LoginForm({ Login, error, CreateUser }) {
 }
 
 export default LoginForm;
-
-<Link to="/posts">
-<div className="add-post">Add Post</div>
-</Link>
